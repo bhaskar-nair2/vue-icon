@@ -54,6 +54,32 @@ Vue.use(feather, {
 ```
 The configured objects are treated as [mixins](https://vuejs.org/v2/api/index.html#mixins), so you can define it like normal Vue instance objects.
 
+NuxtJs
+
+`~/plugins/icon.js`
+```js
+import Vue from 'vue'
+import feather from 'vue-icon'
+
+Vue.use(feather, 'v-icon')
+```
+
+and call in `nuxt.config.js`
+
+```js
+export default {
+    ...,
+    plugins:[
+        { src: '~/plugins/icon.js' },
+    ],
+    ...,
+    build: {
+        transpile: ['vue-icon'],
+    },
+```
+Transpile Build is required as plugin exports ES6 
+
+
 using in `.vue` file
 ``` xml
 <template>
